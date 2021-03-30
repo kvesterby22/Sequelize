@@ -1,6 +1,5 @@
 async function fetchDiningHalls() {
-  const targetList = document.querySelector('.target-list');
-  const targetList2 = document.querySelector('.target-list2');
+  const target = document.querySelector('.target');
   const request = await fetch('/api/dining');
   const data = await request.json();
   console.log(data);
@@ -15,17 +14,12 @@ async function fetchDiningHalls() {
   });
   Object.keys(arr1).forEach((item) => {
     arr2.push(arr1[item].hall_name);
-    const appendItem = document.createElement('li');
-    appendItem.classList.add('block');
-    appendItem.classList.add('list-item');
-    appendItem.innerHTML = `<td class="hn">${arr1[item].hall_name}</td>`;
-    targetList.append(appendItem);
-
-    const appendItem2 = document.createElement('li');
-    appendItem2.classList.add('block');
-    appendItem2.classList.add('list-item');
-    appendItem2.innerHTML = `<td class="hl">${arr1[item].hall_address}</td>`;
-    targetList2.append(appendItem2);
+    const rows = document.createElement('tr'); 
+    rows.innerHTML = `
+    <td>${arr1[item].hall_name}</td>
+    <td>${arr1[item].hall_address}</td>
+    `; 
+    target.append(rows);
   });
   console.log(arr2);
 }
