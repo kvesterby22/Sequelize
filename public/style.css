@@ -29,3 +29,12 @@ h1{
     font-family: "Times New Roman", Times, serif;
     color: black;
 }
+/* td {
+    background-color: rgb(212, 181, 241);
+} */
+tr:nth-child(even) {
+    background-color: #e3b5ec !important;
+  }
+th {
+    background-color:rgb(158, 36, 189);
+}

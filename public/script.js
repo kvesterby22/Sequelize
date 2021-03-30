@@ -24,4 +24,8 @@ async function fetchDiningHalls() {
   console.log(arr2);
 }
 
-fetchDiningHalls();
+async function windowActions() {
+  fetchDiningHalls();
+}
+
+window.onload = windowActions;
